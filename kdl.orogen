@@ -1,0 +1,52 @@
+name "kdl"
+version "0.1"
+
+# If new data types need to be defined, they have to be put in a separate C++
+# header, and this header will be loaded here
+# import_types_from "KDLType.hpp"
+
+using_library 'base-types'
+using_library 'orocos-kdl'
+
+using_typekit 'base'
+
+import_types_from 'KDL/wrappers/KDLTypes.hpp'
+
+typekit.opaque_type '/KDL/Vector', 'wrappers/KDLVector'
+typekit.opaque_type '/KDL/Vector2', 'wrappers/KDLVector2'
+typekit.opaque_type '/KDL/Rotation', 'wrappers/KDLRotation'
+typekit.opaque_type '/KDL/Rotation2', 'wrappers/KDLRotation2'
+typekit.opaque_type '/KDL/Frame', 'wrappers/KDLFrame'
+typekit.opaque_type '/KDL/Frame2', 'wrappers/KDLFrame2'
+typekit.opaque_type '/KDL/Wrench', 'wrappers/KDLWrench'
+typekit.opaque_type '/KDL/Twist', 'wrappers/KDLTwist'
+
+
+typekit.opaque_type '/KDL/Joint', 'wrappers/KDLJoint' #, :includes => ["KDL/frames.hpp"]
+typekit.opaque_type '/KDL/JntArray', 'wrappers/KDLJntArray'
+
+typekit.opaque_type '/KDL/RotationalInertia', 'wrappers/KDLRotationalInertia'
+typekit.opaque_type '/KDL/RigidBodyInertia', 'wrappers/KDLRigidBodyInertia'
+typekit.opaque_type '/KDL/Segment', 'wrappers/KDLSegment'
+typekit.opaque_type '/KDL/Chain', 'wrappers/KDLChain'
+
+import_types_from 'kdl/joint.hpp'
+import_types_from 'kdl/jntarray.hpp'
+import_types_from 'kdl/frames.hpp'
+import_types_from 'kdl/chain.hpp'
+
+
+typekit do
+    export_types 'KDL/Joint',
+        '/KDL/JntArray',
+        '/KDL/Vector',
+        '/KDL/Rotation',
+        '/KDL/Segment',
+        '/KDL/Chain',
+        '/KDL/Frame',
+        '/KDL/Twist',
+        '/KDL/Wrench',
+        '/std/vector</KDL/Frame>',
+        '/std/vector</KDL/Wrench>',
+        '/std/vector</KDL/Twist>',
+end
