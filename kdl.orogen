@@ -9,6 +9,7 @@ using_library 'base-types'
 using_library 'orocos-kdl'
 
 using_typekit 'base'
+import_types_from 'base'
 
 import_types_from 'KDL/wrappers/KDLTypes.hpp'
 
@@ -21,7 +22,7 @@ typekit.opaque_type '/KDL/Frame2', 'wrappers/KDLFrame2'
 typekit.opaque_type '/KDL/Wrench', 'wrappers/KDLWrench'
 typekit.opaque_type '/KDL/Twist', 'wrappers/KDLTwist'
 
-
+typekit.opaque_type '/KDL/Jacobian', 'wrappers/KDLJacobian'
 typekit.opaque_type '/KDL/Joint', 'wrappers/KDLJoint' #, :includes => ["KDL/frames.hpp"]
 typekit.opaque_type '/KDL/JntArray', 'wrappers/KDLJntArray'
 
@@ -34,6 +35,7 @@ import_types_from 'kdl/joint.hpp'
 import_types_from 'kdl/jntarray.hpp'
 import_types_from 'kdl/frames.hpp'
 import_types_from 'kdl/chain.hpp'
+import_types_from 'kdl/jacobian.hpp'
 
 
 typekit do

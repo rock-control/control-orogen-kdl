@@ -24,6 +24,12 @@ namespace orogen_typekits
     void toIntermediate(::wrappers::KDLFrame2& intermediate, ::KDL::Frame2 const& real_type);
     /** Converts \c intermediate into \c real_type */
     void fromIntermediate(::KDL::Frame2& real_type, ::wrappers::KDLFrame2 const& intermediate);
+
+
+    /** Converts \c real_type into \c intermediate */
+    void toIntermediate(::wrappers::KDLJacobian& intermediate, ::KDL::Jacobian const& real_type);
+    /** Converts \c intermediate into \c real_type */
+    void fromIntermediate(::KDL::Jacobian& real_type, ::wrappers::KDLJacobian const& intermediate);
         
     
     /** Converts \c real_type into \c intermediate */
@@ -91,26 +97,6 @@ namespace orogen_typekits
     /** Converts \c intermediate into \c real_type */
     void fromIntermediate(::KDL::Wrench& real_type, ::wrappers::KDLWrench const& intermediate);
         
-    // ADD custom functions for the eigen convertion
-    template<typename T, int EIGEN_OPTIONS, int EIGEN_MAX_ROWS, int EIGEN_MAX_COLS>
-    void toIntermediate(std::vector<T>& intermediate, Eigen::Matrix<T, Eigen::Dynamic, 1, EIGEN_OPTIONS, EIGEN_MAX_ROWS, EIGEN_MAX_COLS> const& real)
-    {
-        typedef Eigen::Matrix<T,Eigen::Dynamic,1,EIGEN_OPTIONS,EIGEN_MAX_ROWS,EIGEN_MAX_COLS> EigenVector;
-
-        intermediate.data.resize(real.size(),0.0);
-
-        Eigen::Map<EigenVector> m(&(intermediate.data[0]),real.size());
-        m = real;
-    }
-
-    template<typename T, int EIGEN_OPTIONS, int EIGEN_MAX_ROWS, int EIGEN_MAX_COLS>
-    void fromIntermediate(Eigen::Matrix<T, Eigen::Dynamic, 1, EIGEN_OPTIONS, EIGEN_MAX_ROWS, EIGEN_MAX_COLS>& real, std::vector<T> const& intermediate)
-    {
-        typedef const Eigen::Matrix<T,Eigen::Dynamic,1,EIGEN_OPTIONS,EIGEN_MAX_ROWS,EIGEN_MAX_COLS> EigenVector;
-
-        Eigen::Map<EigenVector> m(&(intermediate.data[0]),intermediate.data.size());
-        real = m;
-    }
 }
 
 #endif

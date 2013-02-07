@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <base/Types.hpp>
 
 namespace KDL
 {
@@ -15,6 +16,7 @@ namespace KDL
     class Wrench;
     class Twist;
 
+    class Jacobian;
     class Joint;
     class JntArray;
 
@@ -56,11 +58,7 @@ namespace wrappers
     
     struct KDLRotation2
     {
-        // sinus angle
-        double s;
-
-        // cosinus angle
-        double c;
+        double rotationInRad;
 
         KDLRotation2() {}
 
@@ -113,6 +111,11 @@ namespace wrappers
         KDLWrench(::KDL::Wrench const&);
     };
 
+    struct KDLJacobian
+    {
+        MatrixXd data;
+    };
+
     enum KDLJointType { RotAxis,RotX,RotY,RotZ,TransAxis,TransX,TransY,TransZ,None};
 
     struct KDLJoint 
@@ -139,9 +142,7 @@ namespace wrappers
 
     struct KDLJntArray
     {
-        // workaround using opaque in opqaue
-        // Eigen::VectorXd
-        std::vector<double> data;
+        VectorXd data;
     };
 
     struct KDLRotationalInertia
@@ -157,7 +158,7 @@ namespace wrappers
     {
         double m;
         KDLRotationalInertia I;
-        KDLVector h;
+        KDLVector cog;
 
         KDLRigidBodyInertia() {}
 

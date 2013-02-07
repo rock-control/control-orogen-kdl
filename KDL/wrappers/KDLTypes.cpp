@@ -29,8 +29,7 @@ KDLRotation::KDLRotation(::KDL::Rotation const& r)
 }
 
 KDLRotation2::KDLRotation2(::KDL::Rotation2 const& r)
-    : s( sin(r.GetRot()) )
-    , c( cos(r.GetRot()) )
+    : rotationInRad( r.GetRot() )
 {
 }
 
@@ -70,7 +69,7 @@ KDLRotationalInertia::KDLRotationalInertia(::KDL::RotationalInertia const& i)
 KDLRigidBodyInertia::KDLRigidBodyInertia(::KDL::RigidBodyInertia const& i)
     : m(i.getMass())
     , I(i.getRotationalInertia())
-    , h(i.getMass()*i.getCOG())
+    , cog(i.getCOG())
 {}
 
 KDLSegment::KDLSegment(::KDL::Segment const& s)
