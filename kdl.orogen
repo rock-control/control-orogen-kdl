@@ -50,5 +50,5 @@ typekit do
         '/KDL/Wrench',
         '/std/vector</KDL/Frame>',
         '/std/vector</KDL/Wrench>',
-        '/std/vector</KDL/Twist>',
+        '/std/vector</KDL/Twist>'
 end
