@@ -1,5 +1,5 @@
 <package>
-  <description brief="Orogen package for the Orocos Kinematics and Dynamics Library">
+  <description brief="oroGen package to create types for the Orocos Kinematics and Dynamics Library">
   
   </description>
   <author>Thomas Roehr/thomas.roehr@dfki.de</author>
@@ -8,5 +8,5 @@
   <logo>http://</logo>
   <depend package="orogen" />
   <depend package="base/orogen/types" />
-  <depend package="orocos_dynamics_kinematics" />
+  <depend package="control/kdl" /> 
 </package>
