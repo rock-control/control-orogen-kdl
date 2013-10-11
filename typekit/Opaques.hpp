@@ -3,8 +3,6 @@
 #ifndef __OROGEN_GENERATED_kdl_USER_MARSHALLING_HH
 #define __OROGEN_GENERATED_kdl_USER_MARSHALLING_HH
 
-#include <kdl/Types.hpp>
-
 namespace orogen_typekits
 {
     
