@@ -36,6 +36,9 @@ import_types_from 'kdl/jntarray.hpp'
 import_types_from 'kdl/frames.hpp'
 import_types_from 'kdl/chain.hpp'
 import_types_from 'kdl/jacobian.hpp'
+import_types_from 'kdl/rigidbodyinertia.hpp'
+import_types_from 'kdl/rotationalinertia.hpp'
+import_types_from 'kdl/segment.hpp'
 
 
 typekit do

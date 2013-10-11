@@ -3,7 +3,7 @@
 
 #include <string>
 #include <vector>
-#include <base/Types.hpp>
+#include <base/wrappers/Eigen.hpp>
 
 namespace KDL
 {
