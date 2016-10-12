@@ -4,6 +4,12 @@
 #include <string>
 #include <vector>
 #include <base/wrappers/Eigen.hpp>
+#include <kdl/kdl.hpp>
+#include <kdl/frames.hpp>
+#include <kdl/chain.hpp>
+#include <kdl/jacobian.hpp>
+#include <kdl/jntarray.hpp>
+
 
 namespace KDL
 {
