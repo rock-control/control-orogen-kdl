@@ -42,6 +42,7 @@ import_types_from 'kdl/segment.hpp'
 
 
 typekit do
+    remove_types "/KDL/Joint/JointType"
     export_types 'KDL/Joint',
         '/KDL/JntArray',
         '/KDL/Vector',
